@@ -1,80 +1,89 @@
-Laravel Travel Agency API
+# Laravel Travel Agency API
+
 A RESTful API system for a travel agency to manage travels and tours efficiently.
 
-Features
-Admin Endpoints:
-Manage users, travels, and tours, including core operations like creation and updates.
-Public Endpoints:
-Retrieve paginated lists of travels and tours.
-Search and filter tours by price range, date range, and other criteria.
-Sort tours by price and starting date.
-Pagination:
-Efficiently handles large datasets to ensure scalability.
-Role-Based Access Control:
-Implements middleware for admin and editor roles to secure endpoints.
-Clean Architecture:
-Built with reusable components using Laravel’s Service Providers and Repository Patterns.
-Database Optimization:
-Relational database structure with well-defined relationships between travels, tours, and users.
-Installation
-Prerequisites
+## Features
+
+- **Admin Endpoints**:
+  - Manage users, travels, and tours, including core operations like creation and updates.
+- **Public Endpoints**:
+  - Retrieve paginated lists of travels and tours.
+  - Search and filter tours by price range, date range, and other criteria.
+  - Sort tours by price and starting date.
+- **Pagination**:
+  - Efficiently handles large datasets to ensure scalability.
+- **Role-Based Access Control**:
+  - Implements middleware for admin and editor roles to secure endpoints.
+- **Clean Architecture**:
+  - Built with reusable components using Laravel’s Service Providers and Repository Patterns.
+- **Database Optimization**:
+  - Relational database structure with well-defined relationships between travels, tours, and users.
+
+## Installation
+
+### Prerequisites
+
 Ensure you have the following installed:
+- PHP >= 7.4
+- Composer
+- Laravel >= 8.x
+- A web server (e.g., Apache or Nginx)
+- MySQL or another supported database
 
-PHP >= 7.4
-Composer
-Laravel >= 8.x
-A web server (e.g., Apache or Nginx)
-MySQL or another supported database
-Steps
-Clone the Repository
+Please check the official Laravel installation guide for server requirements before you start. Official Documentation
 
-bash
-Copy code
-git clone https://github.com/your-username/laravel-travel-agency-api.git
-cd laravel-travel-agency-api
-Install Dependencies
+Alternative installation is possible without local dependencies relying on Docker.
 
-bash
-Copy code
-composer install
-Set Environment Variables Copy the .env.example file to .env and configure database credentials and other settings:
+Clone the repository 
 
-bash
-Copy code
-cp .env.example .env
-Generate Application Key
+   git clone https://github.com/your-username/laravel-travel-agency-api.git
 
-bash
-Copy code
-php artisan key:generate
-Run Database Migrations
 
-bash
-Copy code
-php artisan migrate
-Seed the Database (Optional) Populate the database with sample data for testing:
+Switch to the repo folder
 
-bash
-Copy code
-php artisan db:seed
-Start the Development Server
+    cd laravel-travel-agency-api
 
-bash
-Copy code
-php artisan serve
-The API will be accessible at http://localhost:8000.
+Install all the dependencies using composer
 
-API Usage
-Admin Endpoints
-Create, update, or delete users, travels, and tours.
-Public Endpoints
-List all public travels with pagination.
-Retrieve and filter tours by travel slug, price range, or date range.
-Sort tours by price (ascending/descending) or starting date.
-Contribution
-Contributions are welcome! Please fork the repository and submit a pull request for any feature additions, bug fixes, or enhancements.
+    composer install
 
-License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+Copy the example env file and make the required configuration changes in the .env file
 
-This format is GitHub-friendly and provides a comprehensive overview of your project. Let me know if you need further customizations!
+    cp .env.example .env
+
+Generate a new application key
+
+    php artisan key:generate
+
+
+Run the database migrations (**Set the database connection in .env before migrating**)
+
+    php artisan migrate
+
+Start the local development server
+
+    php artisan serve
+
+You can now access the server at http://localhost:8000
+
+**TL;DR command list**
+
+   git clone https://github.com/your-username/laravel-travel-agency-api.git
+   cd laravel-travel-agency-api
+   composer install
+   cp .env.example .env
+   php artisan key:generate
+    
+**Make sure you set the correct database connection information before running the migrations** [Environment variables](#environment-variables)
+
+    php artisan migrate
+    php artisan serve
+
+## Database seeding
+
+**Populate the database with seed data with relationships which includes users, articles, comments, tags, favorites and follows. This can help you to quickly start testing the api or couple a frontend and start using it with ready content.**
+
+Run the database seeder and you're done
+
+    php artisan db:seed
+    
